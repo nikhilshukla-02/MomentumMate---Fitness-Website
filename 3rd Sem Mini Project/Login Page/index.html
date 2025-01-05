@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MomentumMate - AI Powered Fitness</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+    margin : 20px;
+    padding: 10px;
+    background: url('photo-1637713871652-4c9f1e601209.avif') no-repeat center center/cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column; /* Arrange elements vertically */
+    align-items: center; /* Center horizontally */
+    color: #fff;
+    min-height: 100vh; /* Ensure full viewport height */
+}
+.Motivation{
+        font-size: 2em; /* Increase font size */
+        color: #333; /* Dark text color */
+        text-align: center; /* Center the text */
+        text-transform: uppercase; /* Uppercase letters */
+        letter-spacing: 1px; /* Space between letters */
+        line-height: 1.8; /* Line height for better readability */
+        padding: 20px; /* Padding around the text */
+        background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient background */
+        -webkit-background-clip: text; /* Clip background to text */
+        -webkit-text-fill-color: transparent; /* Make text color transparent */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        border-radius: 10px; /* Rounded corners */
+        transition: transform 0.3s;
+        }
+        .Motivation:hover{
+            transform: scale(1.05);
+        }
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('photo-1637713871652-4c9f1e601209.avif') no-repeat center center/cover;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+
+header {
+    text-align: center; /* Center the text inside the header */
+    margin-top: 20px; /* Add space from the top */
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    animation: slideInFromTop 1.5s ease-in-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #ff6f61;
+}
+
+main {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure proper centering */
+}
+
+.container {
+    background: rgba(26, 26, 26, 0.8);
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.container h1 {
+    margin-bottom: 1em;
+    color: #ff6f61;
+    animation: slideInFromLeft 1.5s ease-in-out;
+}
+
+.container p {
+    margin-bottom: 2em;
+    font-size: 2rem;
+    animation: slideInFromRight 1.5s ease-in-out;
+}
+
+/* Add animation for header sliding from the top */
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideInFromRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fitness Starts Here</h1>
+    </header>
+    <div> <h1 class="Motivation">Push harder than yesterday if you want a different tomorrow</h1> </div> 
+    <div class="container">
+        <h1>MomentumMate</h1>
+        <p>Your AI-powered fitness companion for a healthier lifestyle!</p>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+
+        <p>New here? <a href="http://127.0.0.1:5501/index.html" class="link">Register</a></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get user input values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Validate input (optional)
+            if (!username || !password) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Store user details in local storage
+            const userDetails = {
+                username: username,
+                password: password
+            };
+            localStorage.setItem('userDetails', JSON.stringify(userDetails));
+
+            // Notify the user
+            alert('Login successful! User details saved.');
+
+            // Redirect to another page (optional)
+            window.location.href = 'http://127.0.0.1:5501/index.html';
+        });
+    </script>
+</body>
+</html>
